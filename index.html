@@ -881,9 +881,13 @@
 
     // Lightbox — only works with real <img> tags; skips placeholders
     function openLightbox(slot) {
-      const img = slot.querySelector('img');
-      if (!img) return;
-      document.getElementById('lightboxImg').src = img.src;
-      document.getElementById('lightboxImg').alt = img.alt;
-      document.getElementById('lightbox').classList.add('open');
-    }
+    const img = slot.querySelector('img');
+    if (!img) return;
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    lightboxImg.src = img.src;
+    lightboxImg.alt = img.alt;
+    lightbox.classList.add('open');
+}
