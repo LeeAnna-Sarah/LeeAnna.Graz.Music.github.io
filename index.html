@@ -249,11 +249,12 @@
     .gallery-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
     .gallery-tab:hover:not(.active) { color: var(--white); }
     .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-auto-rows: 240px;
-      gap: 8px;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 240px;
+    grid-auto-flow: row dense;
+    gap: 8px;
+}
     .gallery-grid .photo-wide { grid-column: span 2; }
     .gallery-grid .photo-tall { grid-row: span 2; }
     .photo-slot {
@@ -614,7 +615,7 @@
     </div>
 
     <!-- PHOTO 2: NZBC SETUP -->
-    <div class="photo-slot photo-tall" onclick="openLightbox(this)">
+    <div class="photo-slot" onclick="openLightbox(this)">
         <img src="NZBC%20Set%20Up.jpeg"
              alt="Live sound equipment setup"
              style="width:100%; height:100%; object-fit:cover;">
@@ -680,7 +681,7 @@
 </div>
 
 <!-- PHOTO 8: MISSISSIPPI MUSIC FOUNDATION -->
-<div class="photo-slot" onclick="openLightbox(this)">
+<div class="photo-slot photo-wide" onclick="openLightbox(this)">
     <img src="MS%20Music%20Foundation.jpeg"
          alt="Mississippi Music Foundation"
          style="width:100%; height:100%; object-fit:cover;">
@@ -691,7 +692,7 @@
 </div>
 
 <!-- PHOTO 9: DMI AUDIOBOOK SESSION -->
-<div class="photo-slot photo-wide" onclick="openLightbox(this)">
+<div class="photo-slot" onclick="openLightbox(this)">
     <img src="Studio%20B%20Audio%20Book%20DMI.JPG"
          alt="Audiobook recording session at DMI"
          style="width:100%; height:100%; object-fit:cover;">
